@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+<i>Name:</i> <b>{{ poll.question }}</b>
+    <br>
+    <i>Description: </i><b>
+    <br>
+    {% for pro in poll.choices.all %}
+{#        <a href="{% url 'TaskView' pro.pk %}">{{ pro }}</a></h5>#}
+    {{ pro }}
+        <a href="{% url 'ChoiceUpdate' pro.pk  %}">Изменить </a>
+        <a href="{% url 'ChoiceDelete' pro.pk  %}">Удалить </a>
+
+        <br>
+    {%  endfor %}</b>
+    <a href="{% url 'ChoiceCreate' poll.pk  %}">Создать </a>
+    <br>
+    <a href="{% url 'PollUpdate' poll.pk %}">Изменить </a>
+    <br>
+    <a href="{% url 'PollDelete' poll.pk %}">Удалить </a>
+    <br>
+{#    <a href="{% url 'SoftDeleteProject' project.pk %}">Мягкое удаление</a>#}
+
+
+
+</div>
+{%  endblock %}
+

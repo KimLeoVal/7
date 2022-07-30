@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'PollCreate' %}" method="POST">
+{%  include 'partial/form.html' with button='Create'%}
+
+
+
+        </form>
+{% endblock %}
