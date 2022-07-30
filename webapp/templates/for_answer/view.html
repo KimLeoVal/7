@@ -1,0 +1,18 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+<i>Name:</i> <b>{{ answer.poll.question }}</b>
+    <br>
+    <i>Description: </i><b>
+    {{ answer.choice }}
+    <br>
+{#    {% for pro in poll.choices.all %}#}
+{##}
+{#    {{ pro }}#}
+{#        <a href="{% url 'ChoiceUpdate' pro.pk  %}">Изменить </a>#}
+{#        <a href="{% url 'ChoiceDelete' pro.pk  %}">Удалить </a>#}
+{##}
+{#        <br>#}
+{#    {%  endfor %}</b>#}
+{% endblock %}

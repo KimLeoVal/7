@@ -6,7 +6,7 @@
     <br>
     <i>Description: </i>
 
-    {%  for  i in answer.poll.choices.all %}
+    {%  for  i in choice %}
          <body>
 
  <form action="" method="post">
@@ -15,6 +15,7 @@
   <p><input type="radio" name="answer" value="{{ i.pk }}">{{ i }}<Br>
 
   </p>
+
      {%  endfor %}
   <p><input type="submit" value="Выбрать"></p>
  </form>

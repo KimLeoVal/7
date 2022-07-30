@@ -84,6 +84,10 @@ class AnswerView(ListView):
     template_name = 'for_answer/index_answer.html'
     context_object_name = 'answer'
 
+class AnswerDetailView(DetailView):
+    model = Answer
+    template_name = 'for_answer/view.html'
+    context_object_name = 'answer'
 
 class AnswerGo(TemplateView):
     template_name = 'for_answer/answer.html'
@@ -92,18 +96,29 @@ class AnswerGo(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         answer = get_object_or_404(Answer, pk=kwargs['pk'])
+        print(answer.poll_id)
+        choice = Choice.objects.filter(poll__id=answer.poll_id)
+        print(choice)
         context['answer'] = answer
+        context['choice'] = choice
         return context
 
     def post(self, request, *args, **kwargs):
-         # answer = get_object_or_404(Answer, pk=kwargs['pk'])
-         choice_id = request.POST.get('answer')
-         choice_id=Choice.objects.get(pk=choice_id)
-         poll_id = kwargs['pk']
-         poll_id = Poll.objects.get(pk = poll_id)
-         qqq= Answer.objects.create(choice=choice_id,poll=poll_id)
-         qqq.save()
-         return redirect('PollDetailView',pk=poll_id)
+        pk = kwargs['pk']
+        answer = get_object_or_404(Answer, pk=pk)
+        choice_id = request.POST.get('answer')
+        # choices = Choice.objects.filter(poll__id=answer.poll_id)
+        # choice_id =
+        # choice_id=Choice.objects.get(pk=choice_id)
+        # poll_id = kwargs['pk']
+        # poll_id = Poll.objects.get(pk = poll_id)
+        answer.choice_id=choice_id
+        # answer.poll_id=pk
+        print(answer)
+            # Answer.objects.create(choice_id=choice_id, poll_id=pk)
+        answer.save()
+        return redirect('AnswerDetailView', pk=answer.pk)
+
 
 
 
