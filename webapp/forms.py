@@ -12,4 +12,4 @@ class PollForm(forms.ModelForm):
 class ChoiceForm(forms.ModelForm):
     class Meta:
         model = Choice
-        fields = '__all__'
+        fields = ['text']

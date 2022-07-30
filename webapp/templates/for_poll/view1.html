@@ -1,0 +1,17 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+TEST
+
+        <br>
+
+
+    <a href="{% url 'PollDelete' poll.pk %}">Удалить </a>
+    <br>
+{#    <a href="{% url 'SoftDeleteProject' project.pk %}">Мягкое удаление</a>#}
+
+
+
+</div>
+{%  endblock %}

@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from webapp.forms import PollForm, ChoiceForm
-from webapp.models import Poll, Choice
+from webapp.models import Poll, Choice, Answer
 
 
 class PollView(ListView):
@@ -17,6 +18,11 @@ class PollDetailView(DetailView):
     model = Poll
     template_name = 'for_poll/view.html'
     context_object_name = 'poll'
+
+# class PollDetailView1(DetailView):
+#     model = Poll
+#     template_name = 'for_poll/view1.html'
+#     context_object_name = 'poll'
 
 class PollCreate(CreateView):
     template_name = 'for_poll/create.html'
@@ -45,14 +51,14 @@ class ChoiceView(ListView):
     template_name = 'for_poll/view.html'
     context_object_name = 'choice'
 
-class ChoiceCreate(CreateView):
+class ChoiceCreate1(CreateView):
     template_name = 'for_choice/create.html'
     form_class = ChoiceForm
 
 
     def form_valid(self, form):
         poll = get_object_or_404(Poll, pk=self.kwargs.get('pk'))
-        form.instance.choice = poll
+        form.instance.poll = poll
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -71,6 +77,36 @@ class ChoiceDelete(DeleteView):
     context_object_name = 'choice'
     template_name = 'for_choice/delete.html'
     success_url = reverse_lazy('PollView')
+
+
+class AnswerView(ListView):
+    model = Answer
+    template_name = 'for_answer/index_answer.html'
+    context_object_name = 'answer'
+
+
+class AnswerGo(TemplateView):
+    template_name = 'for_answer/answer.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        answer = get_object_or_404(Answer, pk=kwargs['pk'])
+        context['answer'] = answer
+        return context
+
+    def post(self, request, *args, **kwargs):
+         # answer = get_object_or_404(Answer, pk=kwargs['pk'])
+         choice_id = self.request.POST.get('answer')
+         choice_id=Choice.objects.get(pk=choice_id)
+         poll_id = kwargs['pk']
+         poll_id = Poll.objects.get(pk = poll_id)
+         Answer.objects.create(choice=choice_id,poll=poll_id)
+         return redirect('PollDetailView1',pk=poll_id)
+
+
+
+
 
 
 

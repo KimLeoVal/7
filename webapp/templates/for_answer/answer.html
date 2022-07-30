@@ -1,0 +1,31 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+<i>Name:</i> <b>{{ answer.poll.question }}</b>
+    <br>
+    <i>Description: </i>
+
+    {%  for  i in answer.poll.choices.all %}
+         <body>
+
+ <form action="" method="post">
+     {% csrf_token %}
+
+  <p><input type="radio" name="answer" value="{{ i }}">{{ i }}<Br>
+
+  </p>
+     {%  endfor %}
+  <p><input type="submit" value="Выбрать"></p>
+ </form>
+
+
+
+    <b>
+    <br>
+
+
+
+
+</div>
+{%  endblock %}
