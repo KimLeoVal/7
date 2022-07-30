@@ -97,12 +97,13 @@ class AnswerGo(TemplateView):
 
     def post(self, request, *args, **kwargs):
          # answer = get_object_or_404(Answer, pk=kwargs['pk'])
-         choice_id = self.request.POST.get('answer')
+         choice_id = request.POST.get('answer')
          choice_id=Choice.objects.get(pk=choice_id)
          poll_id = kwargs['pk']
          poll_id = Poll.objects.get(pk = poll_id)
-         Answer.objects.create(choice=choice_id,poll=poll_id)
-         return redirect('PollDetailView1',pk=poll_id)
+         qqq= Answer.objects.create(choice=choice_id,poll=poll_id)
+         qqq.save()
+         return redirect('PollDetailView',pk=poll_id)
 
 
 

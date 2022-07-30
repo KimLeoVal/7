@@ -12,7 +12,7 @@
  <form action="" method="post">
      {% csrf_token %}
 
-  <p><input type="radio" name="answer" value="{{ i }}">{{ i }}<Br>
+  <p><input type="radio" name="answer" value="{{ i.pk }}">{{ i }}<Br>
 
   </p>
      {%  endfor %}
