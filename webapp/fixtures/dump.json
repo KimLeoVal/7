@@ -1,240 +1,71 @@
 [
 {
-    "model": "webapp.poll",
+    "model": "webapp.product",
     "pk": 1,
     "fields": {
-        "question": "Сколько грамм в 1кг?",
-        "created_ad": "2022-07-30T05:34:03.555Z"
+        "name": "White bred",
+        "category": "bred",
+        "description": "White bredWhite bred",
+        "img": ""
     }
 },
 {
-    "model": "webapp.poll",
+    "model": "webapp.product",
     "pk": 2,
     "fields": {
-        "question": "Сколько см в 1м?",
-        "created_ad": "2022-07-30T05:34:23.157Z"
+        "name": "Milk",
+        "category": "milk",
+        "description": "MilkMilk",
+        "img": ""
     }
 },
 {
-    "model": "webapp.poll",
+    "model": "webapp.product",
     "pk": 3,
     "fields": {
-        "question": "Сколько кг в 1тонне?",
-        "created_ad": "2022-07-30T05:35:11.424Z"
+        "name": "Chicken",
+        "category": "food",
+        "description": "ChickenChicken",
+        "img": ""
     }
 },
 {
-    "model": "webapp.poll",
-    "pk": 4,
-    "fields": {
-        "question": "Сколько см в 1дц?",
-        "created_ad": "2022-07-30T05:35:42.585Z"
-    }
-},
-{
-    "model": "webapp.poll",
-    "pk": 5,
-    "fields": {
-        "question": "Сколько секунд в 1ч?",
-        "created_ad": "2022-07-30T05:36:12.804Z"
-    }
-},
-{
-    "model": "webapp.poll",
-    "pk": 6,
-    "fields": {
-        "question": "Сколько часов в 1сутках?",
-        "created_ad": "2022-07-30T05:36:40.858Z"
-    }
-},
-{
-    "model": "webapp.poll",
-    "pk": 7,
-    "fields": {
-        "question": "Сколько тыин в 1 соме?",
-        "created_ad": "2022-07-30T06:17:05.612Z"
-    }
-},
-{
-    "model": "webapp.choice",
+    "model": "webapp.review",
     "pk": 1,
     "fields": {
-        "text": "100",
-        "poll": 7
+        "author": 1,
+        "product": 1,
+        "text": "Вкусный, белый хлеб",
+        "score": 5,
+        "mod": true,
+        "created_at": "2022-08-27T06:04:32.011Z",
+        "updated_at": "2022-08-27T06:04:32.011Z"
     }
 },
 {
-    "model": "webapp.choice",
-    "pk": 3,
-    "fields": {
-        "text": "333",
-        "poll": 7
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 4,
-    "fields": {
-        "text": "5555",
-        "poll": 7
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 5,
-    "fields": {
-        "text": "24",
-        "poll": 6
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 6,
-    "fields": {
-        "text": "36",
-        "poll": 6
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 8,
-    "fields": {
-        "text": "60",
-        "poll": 5
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 9,
-    "fields": {
-        "text": "24",
-        "poll": 5
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 10,
-    "fields": {
-        "text": "3600",
-        "poll": 5
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 11,
-    "fields": {
-        "text": "10",
-        "poll": 4
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 12,
-    "fields": {
-        "text": "100",
-        "poll": 4
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 13,
-    "fields": {
-        "text": "1000",
-        "poll": 3
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 14,
-    "fields": {
-        "text": "2000",
-        "poll": 3
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 15,
-    "fields": {
-        "text": "200",
-        "poll": 2
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 16,
-    "fields": {
-        "text": "100",
-        "poll": 2
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 17,
-    "fields": {
-        "text": "500",
-        "poll": 1
-    }
-},
-{
-    "model": "webapp.choice",
-    "pk": 18,
-    "fields": {
-        "text": "1000",
-        "poll": 1
-    }
-},
-{
-    "model": "webapp.answer",
-    "pk": 1,
-    "fields": {
-        "poll": 7,
-        "created_ad": "2022-07-30T08:15:21.697Z",
-        "choice": 1
-    }
-},
-{
-    "model": "webapp.answer",
+    "model": "webapp.review",
     "pk": 2,
     "fields": {
-        "poll": 6,
-        "created_ad": "2022-07-30T12:32:45.833Z",
-        "choice": 5
+        "author": 1,
+        "product": 2,
+        "text": "Молоко из деревни",
+        "score": 5,
+        "mod": true,
+        "created_at": "2022-08-27T06:05:07.631Z",
+        "updated_at": "2022-08-27T06:05:07.631Z"
     }
 },
 {
-    "model": "webapp.answer",
+    "model": "webapp.review",
     "pk": 3,
     "fields": {
-        "poll": 1,
-        "created_ad": "2022-07-30T12:35:05.125Z",
-        "choice": 13
-    }
-},
-{
-    "model": "webapp.answer",
-    "pk": 4,
-    "fields": {
-        "poll": 2,
-        "created_ad": "2022-07-30T12:35:13.540Z",
-        "choice": 1
-    }
-},
-{
-    "model": "webapp.answer",
-    "pk": 5,
-    "fields": {
-        "poll": 3,
-        "created_ad": "2022-07-30T12:35:20.925Z",
-        "choice": 13
-    }
-},
-{
-    "model": "webapp.answer",
-    "pk": 6,
-    "fields": {
-        "poll": 4,
-        "created_ad": "2022-07-30T12:35:37.372Z",
-        "choice": 11
+        "author": 1,
+        "product": 3,
+        "text": "Курочка из деревни",
+        "score": 5,
+        "mod": true,
+        "created_at": "2022-08-27T06:05:39.332Z",
+        "updated_at": "2022-08-27T06:05:39.332Z"
     }
 }
 ]

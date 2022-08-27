@@ -1,0 +1,26 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+<i>Name:</i> <b>{{ product }}</b>
+    <br>
+    <i>Category: </i><b>{{ product.category }}</b>
+    <br>
+    <i>Description: </i><b>{{ product.description }}</b>
+    <br>
+    <i>Img: </i><b>{{ product.img}}</b>
+    <br>
+
+    <a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
+    <br>
+{#    <a href="{% url 'PollUpdate' poll.pk %}">Изменить </a>#}
+{#    <br>#}
+    <a href="{% url 'webapp:ProductDelete' product.pk %}">Удалить </a>
+{#    <br>#}
+
+
+
+
+</div>
+{%  endblock %}
+

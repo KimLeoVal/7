@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 {% block content %}
-    <form action="{% url 'PollCreate' %}" method="POST">
+    <form action="{% url 'webapp:ProductCreate' %}" method="POST">
 {%  include 'partial/form.html' with button='Create'%}
 
 

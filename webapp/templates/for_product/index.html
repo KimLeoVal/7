@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% for product in products %}
+
+
+    <div class="card" style="width: 24rem;">
+  <div class="card-body">
+    <h5 class="card-title">Название:
+        <a href="{% url 'webapp:ProductDetaillView' product.pk %}">{{ product.name }}</a></h5>
+<a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
+    <br>
+      <a href="{% url 'webapp:ProductDelete' product.pk %}">Удалить </a>
+
+  </div>
+</div>
+
+{% endfor %}
+
+{% if is_paginated %}
+        {% include "partial/pagination.html" %}
+    {% endif %}
+
+
+{% endblock %}

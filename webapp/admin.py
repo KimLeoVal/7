@@ -2,9 +2,9 @@
 
 from django.contrib import admin
 
-from webapp.models import Poll, Choice, Answer
+from webapp.models import Product, Review
 
-admin.site.register(Poll)
-admin.site.register(Choice)
-admin.site.register(Answer)
+admin.site.register(Product)
+admin.site.register(Review)
+
 

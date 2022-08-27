@@ -14,14 +14,14 @@
 {% block nav %}
     <nav class="navbar bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'PollView' %}">Poll
+            <a class="navbar-brand" href="{% url 'webapp:ProductsView' %}">Products
             </a>
-{#            <a class="navbar-brand" href="{% url 'PollDetailView' %}">Project#}
+{#            <a class="navbar-brand" href="{% url 'webapp:ProductDetaillView' pk %}">Project#}
 {#            </a>#}
-            <a class="navbar-brand" href="{% url 'PollCreate' %}">Create Poll
+            <a class="navbar-brand" href="{% url 'webapp:ProductCreate' %}">Create Product
             </a>
-            <a class="navbar-brand" href="{% url 'AnswerView' %}">Answer
-            </a>
+{#            <a class="navbar-brand" href="{% url 'AnswerView' %}">Answer#}
+{#            </a>#}
         </div>
     </nav>
 {% endblock %}
