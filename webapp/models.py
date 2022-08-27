@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 CHOICE = [('food', 'Еда'), ('milk', 'Молоко'), ('bred', 'Хлеб')]
@@ -26,7 +27,7 @@ class Review(models.Model):
     product = models.ForeignKey('webapp.Product',related_name='review', on_delete=models.CASCADE,
                              verbose_name='Продукт')
     text = models.TextField(max_length=2000,verbose_name='Текст отзыва')
-    score = models.PositiveIntegerField()
+    score = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     mod = models.BooleanField(null=True,blank=True,default=False,verbose_name='Модерирование')
     created_ad = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_ad = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')

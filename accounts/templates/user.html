@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Имя пользователя: {{ user.username }}</p>
+    <p>Имя: {{ request.user.first_name}}</p>
+    <p>Почта: {{ user.email }}</p>
+    <h2 class="text-center clear">Отзывы:</h2>
+{%  for review in user.review.all %}
+    <a href="{% url 'webapp:ReviewDetaillView' review.pk %}">{{ Review }}</a>
+
+    {% endfor %}
+    <li><a href="{% url 'accounts:UserChangeView' user.pk %}">Редактировать</a></li>
+    <li><a href="{% url 'accounts:password_change'  %}">Смена пароля</a></li>
+{% endblock %}
+
+password_change

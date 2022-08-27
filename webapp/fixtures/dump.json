@@ -31,28 +31,15 @@
 },
 {
     "model": "webapp.review",
-    "pk": 1,
-    "fields": {
-        "author": 1,
-        "product": 1,
-        "text": "Вкусный, белый хлеб",
-        "score": 5,
-        "mod": true,
-        "created_at": "2022-08-27T06:04:32.011Z",
-        "updated_at": "2022-08-27T06:04:32.011Z"
-    }
-},
-{
-    "model": "webapp.review",
     "pk": 2,
     "fields": {
         "author": 1,
         "product": 2,
-        "text": "Молоко из деревни",
+        "text": "Молоко из деревни!!!!!!",
         "score": 5,
         "mod": true,
-        "created_at": "2022-08-27T06:05:07.631Z",
-        "updated_at": "2022-08-27T06:05:07.631Z"
+        "created_ad": "2022-08-27T06:05:07.631Z",
+        "updated_ad": "2022-08-27T11:16:15.280Z"
     }
 },
 {
@@ -64,8 +51,112 @@
         "text": "Курочка из деревни",
         "score": 5,
         "mod": true,
-        "created_at": "2022-08-27T06:05:39.332Z",
-        "updated_at": "2022-08-27T06:05:39.332Z"
+        "created_ad": "2022-08-27T06:05:39.332Z",
+        "updated_ad": "2022-08-27T06:05:39.332Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 5,
+    "fields": {
+        "author": 1,
+        "product": 1,
+        "text": "cbdb",
+        "score": 5,
+        "mod": false,
+        "created_ad": "2022-08-27T07:49:06.805Z",
+        "updated_ad": "2022-08-27T07:49:06.805Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 6,
+    "fields": {
+        "author": 1,
+        "product": 2,
+        "text": "dfgcgd",
+        "score": 5,
+        "mod": false,
+        "created_ad": "2022-08-27T07:50:44.943Z",
+        "updated_ad": "2022-08-27T07:50:44.943Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 7,
+    "fields": {
+        "author": 1,
+        "product": 2,
+        "text": "ddddd",
+        "score": 1,
+        "mod": false,
+        "created_ad": "2022-08-27T07:51:33.918Z",
+        "updated_ad": "2022-08-27T07:51:33.918Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 8,
+    "fields": {
+        "author": 1,
+        "product": 1,
+        "text": "wwww",
+        "score": 2,
+        "mod": false,
+        "created_ad": "2022-08-27T07:53:18.165Z",
+        "updated_ad": "2022-08-27T07:53:18.165Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 9,
+    "fields": {
+        "author": 1,
+        "product": 1,
+        "text": "wwww",
+        "score": 2,
+        "mod": false,
+        "created_ad": "2022-08-27T07:53:49.360Z",
+        "updated_ad": "2022-08-27T07:53:49.360Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 10,
+    "fields": {
+        "author": 1,
+        "product": 3,
+        "text": "333",
+        "score": 3,
+        "mod": false,
+        "created_ad": "2022-08-27T07:55:11.360Z",
+        "updated_ad": "2022-08-27T07:55:11.360Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 12,
+    "fields": {
+        "author": 2,
+        "product": 1,
+        "text": "1111",
+        "score": 3,
+        "mod": true,
+        "created_ad": "2022-08-27T09:24:41.211Z",
+        "updated_ad": "2022-08-27T11:53:16.181Z"
+    }
+},
+{
+    "model": "webapp.review",
+    "pk": 13,
+    "fields": {
+        "author": 2,
+        "product": 1,
+        "text": "hhhhhhhhh",
+        "score": 4,
+        "mod": true,
+        "created_ad": "2022-08-27T10:55:58.595Z",
+        "updated_ad": "2022-08-27T10:55:58.595Z"
     }
 }
 ]

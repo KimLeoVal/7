@@ -1,0 +1,30 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+<div class="container">
+<i>Name:</i> <a  href="{% url 'accounts:UserDetailView' review.author.pk%}">{{ review.author }}
+            </a>
+    <br>
+    <i>Email: </i><b>{{ review.author.email }}</b>
+    <br>
+    <i>Description: </i><b>{{ review.text }}</b>
+    <br>
+    <i>Score: </i><b>{{ review.score}}</b>
+    <br>
+
+    <br>
+{% if perms.webapp.change_review  %}
+<a href="{% url 'webapp:ReviewUpdate' review.pk %}">Изменить отзыв </a>
+    {% endif %}
+    <br>
+{% if perms.webapp.delete_review  %}
+    <a href="{% url 'webapp:DeleteReview' review.pk %}">Удалить </a>
+{% endif %}
+    <br>
+
+
+
+
+</div>
+{%  endblock %}
+

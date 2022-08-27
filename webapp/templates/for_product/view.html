@@ -10,14 +10,16 @@
     <br>
     <i>Img: </i><b>{{ product.img}}</b>
     <br>
-
-    <a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
+    <i>Средний балл: </i><b>{{ avg}}</b>
     <br>
-{#    <a href="{% url 'PollUpdate' poll.pk %}">Изменить </a>#}
-{#    <br>#}
+{% if perms.webapp.change_product %}
+    <a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
+    {% endif %}
+    <br>
+{% if perms.webapp.delete_product %}
     <a href="{% url 'webapp:ProductDelete' product.pk %}">Удалить </a>
-{#    <br>#}
 
+{% endif %}
 
 
 

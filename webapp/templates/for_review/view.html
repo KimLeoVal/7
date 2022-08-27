@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% for rev in review %}
+
+
+    <div class="card" style="width: 24rem;">
+  <div class="card-body">
+    <h5 class="card-title">Название:
+        <a href="{% url 'webapp:ReviewDetaillView' rev.pk %}">{{ rev}}</a></h5>
+      <br>
+      {% if perms.webapp.change_review  %}
+        <a href="{% url 'webapp:ReviewUpdate' rev.pk %}">Изменить отзыв </a>
+      {% endif %}
+    <br>
+  {% if perms.webapp.delete_review  %}
+      <a href="{% url 'webapp:DeleteReview' rev.pk %}">Удалить </a>
+  {% endif %}
+
+  </div>
+</div>
+
+{% endfor %}
+
+{% if is_paginated %}
+        {% include "partial/pagination.html" %}
+    {% endif %}
+
+
+{% endblock %}

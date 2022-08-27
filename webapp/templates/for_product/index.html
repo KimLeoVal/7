@@ -8,10 +8,18 @@
   <div class="card-body">
     <h5 class="card-title">Название:
         <a href="{% url 'webapp:ProductDetaillView' product.pk %}">{{ product.name }}</a></h5>
-<a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
-    <br>
-      <a href="{% url 'webapp:ProductDelete' product.pk %}">Удалить </a>
 
+        <p>Средний балл: {{ product.avg }}</p>
+
+
+
+{% if perms.webapp.change_product %}
+<a href="{% url 'webapp:ProductUpdate' product.pk  %}">Редактировать </a>
+      {% endif %}
+    <br>
+  {% if perms.webapp.delete_product %}
+      <a href="{% url 'webapp:ProductDelete' product.pk %}">Удалить </a>
+{% endif %}
   </div>
 </div>
 
